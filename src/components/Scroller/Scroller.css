@@ -6,7 +6,21 @@
   margin-bottom: 25px;
 }
 
-.scroll_arrows {
+.scroller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  position: fixed;
+  width: 100%;
+  top: 75%;
+}
+
+.scrollarrow {
+  margin-bottom: 25px;
+}
+
+/* .scroll_arrows {
   display: block;
   width: 5px;
   height: 5px;
@@ -24,12 +38,21 @@
 
 .one {
   margin-top: 1px;
+  background-color: transparent;
 }
 
 .two {
   margin-top: -13px;
+  background-color: transparent;
 }
 
 .three {
   margin-top: -13px;
+  background-color: transparent;
+} */
+
+.text {
+  font-family: "KyoboHandwriting2021sjy";
+  margin-left: 7px;
+  font-size: 2.1vh;
 }
