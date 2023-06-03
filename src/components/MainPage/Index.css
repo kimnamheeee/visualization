@@ -1,0 +1,33 @@
+.maintext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38%;
+  height: 30%;
+  margin: 0 auto;
+  transform: translate(0, 40%);
+}
+
+.maintext4 {
+  font-family: "KyoboHandwriting2021sjy";
+  font-size: 4.8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 7.4vh;
+  margin-top: 12%;
+}
+
+.mainPage4 {
+  width: 100%;
+}
+
+.maintext2 {
+  font-family: "KyoboHandwriting2021sjy";
+  font-size: 4.8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 7.4vh;
+  margin-top: 15%;
+}
