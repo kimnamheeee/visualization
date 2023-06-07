@@ -2,6 +2,7 @@ import "./App.css";
 import { MainPage1, MainPage2, MainPage4 } from "./components/MainPage/Index";
 import { useState, useEffect } from "react";
 import { RadarChart2018 } from "./components/RadarChart/Index";
+import YearBar from "./components/YearBar/Index";
 
 function App() {
   // const [scrollAttempts, setScrollAttempts] = useState(0);
@@ -35,12 +36,20 @@ function App() {
   //   }
   // }, [scrollAttempts]);
 
+  const [selectedCircle, setSelectedCircle] = useState(null);
+
   return (
     <div className="App">
       {/* {showMainPage === 1 && <MainPage1 />}
       {showMainPage === 2 && <MainPage2 />}
       {showMainPage === 4 && <MainPage4 />} */}
       <RadarChart2018 />
+      <div className="main-yearbar">
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
+      </div>
     </div>
   );
 }
