@@ -10,3 +10,9 @@
   height: 100%;
   width: 100%;
 }
+
+.main-yearbar {
+  position: fixed;
+  top: 60vh;
+  left: 87vw;
+}

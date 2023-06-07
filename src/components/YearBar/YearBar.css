@@ -1,0 +1,59 @@
+.yearbar-container {
+  height: 32vh;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  width: 7.8vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.number {
+  font-family: "KyoboHandwriting2021sjy";
+  color: #d9d9d9;
+  font-size: 2.3vh;
+  font-weight: 400;
+}
+
+.numbers-container {
+  height: 29vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.circle {
+  height: 2.3vh;
+  width: 2.3vh;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #54bfcf !important;
+  border: 1px solid #54bfcf !important;
+}
+
+.chosen {
+  color: #54bfcf !important;
+}
+
+.circle-container {
+  height: 29vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 2.3vh;
+}
+
+.line {
+  height: 26vh;
+  border-right: 1px solid #d9d9d9;
+  position: absolute;
+  margin-top: 1vh;
+  margin-left: 1.2vh;
+  z-index: -99;
+}
