@@ -1,7 +1,13 @@
 import "./App.css";
-import { MainPage1, MainPage2, MainPage4 } from "./components/MainPage/Index";
-import { useState, useEffect } from "react";
-import { RadarChart2018 } from "./components/RadarChart/Index";
+// import { MainPage1, MainPage2, MainPage4 } from "./components/MainPage/Index";
+import { useState } from "react";
+import {
+  RadarChart2018,
+  RadarChart2019,
+  RadarChart2020,
+  RadarChart2021,
+  RadarChart2022,
+} from "./components/RadarChart/Index";
 import YearBar from "./components/YearBar/Index";
 
 function App() {
@@ -36,14 +42,36 @@ function App() {
   //   }
   // }, [scrollAttempts]);
 
-  const [selectedCircle, setSelectedCircle] = useState(null);
+  const [selectedCircle, setSelectedCircle] = useState(0);
+
+  let radarChart;
+
+  switch (selectedCircle) {
+    case 0:
+      radarChart = <RadarChart2018 />;
+      break;
+    case 1:
+      radarChart = <RadarChart2019 />;
+      break;
+    case 2:
+      radarChart = <RadarChart2020 />;
+      break;
+    case 3:
+      radarChart = <RadarChart2021 />;
+      break;
+    case 4:
+      radarChart = <RadarChart2022 />;
+      break;
+    default:
+      radarChart = null;
+  }
 
   return (
     <div className="App">
       {/* {showMainPage === 1 && <MainPage1 />}
       {showMainPage === 2 && <MainPage2 />}
       {showMainPage === 4 && <MainPage4 />} */}
-      <RadarChart2018 />
+      {radarChart}
       <div className="main-yearbar">
         <YearBar
           selectedCircle={selectedCircle}
