@@ -1,5 +1,4 @@
 import "./YearBar.css";
-import React, { useState } from "react";
 
 const YearBar = ({ selectedCircle, setSelectedCircle }) => {
   return (
