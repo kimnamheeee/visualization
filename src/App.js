@@ -9,6 +9,7 @@ import {
   RadarChart2022,
 } from "./components/RadarChart/Index";
 import YearBar from "./components/YearBar/Index";
+import { Modal } from "./components/Modal/Index";
 
 function App() {
   // const [scrollAttempts, setScrollAttempts] = useState(0);
@@ -43,24 +44,73 @@ function App() {
   // }, [scrollAttempts]);
 
   const [selectedCircle, setSelectedCircle] = useState(0);
+  const [hoveredChart, setHoveredChart] = useState({
+    region: null,
+    year: null,
+  });
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState({
+    year: null,
+    region: null,
+  });
+
+  const handleChartMouseOver = (region, year) => {
+    setHoveredChart({ region, year });
+  };
+
+  const handleChartClick = (region, year) => {
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+  };
 
   let radarChart;
 
   switch (selectedCircle) {
     case 0:
-      radarChart = <RadarChart2018 />;
+      radarChart = (
+        <RadarChart2018
+          onChartMouseOver={handleChartMouseOver}
+          onChartClick={handleChartClick}
+          hoveredChart={hoveredChart}
+        />
+      );
       break;
     case 1:
-      radarChart = <RadarChart2019 />;
+      radarChart = (
+        <RadarChart2019
+          onChartMouseOver={handleChartMouseOver}
+          onChartClick={handleChartClick}
+          hoveredChart={hoveredChart}
+        />
+      );
       break;
     case 2:
-      radarChart = <RadarChart2020 />;
+      radarChart = (
+        <RadarChart2020
+          onChartMouseOver={handleChartMouseOver}
+          onChartClick={handleChartClick}
+          hoveredChart={hoveredChart}
+        />
+      );
       break;
     case 3:
-      radarChart = <RadarChart2021 />;
+      radarChart = (
+        <RadarChart2021
+          onChartMouseOver={handleChartMouseOver}
+          onChartClick={handleChartClick}
+          hoveredChart={hoveredChart}
+        />
+      );
       break;
     case 4:
-      radarChart = <RadarChart2022 />;
+      radarChart = (
+        <RadarChart2022
+          onChartMouseOver={handleChartMouseOver}
+          onChartClick={handleChartClick}
+          hoveredChart={hoveredChart}
+        />
+      );
       break;
     default:
       radarChart = null;
@@ -71,6 +121,13 @@ function App() {
       {/* {showMainPage === 1 && <MainPage1 />}
       {showMainPage === 2 && <MainPage2 />}
       {showMainPage === 4 && <MainPage4 />} */}
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       {radarChart}
       <div className="main-yearbar">
         <YearBar

@@ -1,0 +1,60 @@
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  height: 90vh;
+  width: 63.5vw;
+  background-color: #ffffff;
+  border-radius: 40px;
+}
+
+.detail-radarchart {
+  height: 26vh;
+  margin-left: 2.3vw;
+  margin-top: 3.2vh;
+}
+
+.close {
+  cursor: pointer;
+  height: 2.7vh;
+  margin-left: 60vw;
+  margin-top: 3.3vh;
+}
+
+.chart-description {
+  height: 30.6vh;
+  position: absolute;
+}
+
+.modal-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  justify-content: space-between;
+}
+
+.totalnumber-container {
+  font-size: 3.3vh;
+}
+
+.explanation-container {
+  font-size: 2.6vh;
+  color: #595959;
+  text-align: center;
+  line-height: 4.6vh;
+}
+
+.text {
+  font-family: "KyoboHandwriting2021sjy";
+}

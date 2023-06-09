@@ -29,7 +29,11 @@ const region_names = [
   "gyeongnam",
 ];
 
-export const RadarChart2018 = () => {
+export const RadarChart2018 = ({
+  onChartMouseOver,
+  hoveredChart,
+  onChartClick,
+}) => {
   return (
     <>
       <div className="descriptions">
@@ -58,16 +62,23 @@ export const RadarChart2018 = () => {
           광역시를 클릭하여 자세한 현황을 살펴보세요!
         </div>
         <div className="radarchart-container">
-          {region_names.map((region) => {
+          {region_names.map((region, index) => {
             const imageKey = `${region}2018`;
             const image = images2018[imageKey];
 
             return (
               <img
-                className="radarchart"
+                className={`radarchart ${
+                  hoveredChart.region === region && hoveredChart.year === 2018
+                    ? "hovered"
+                    : ""
+                }`}
                 src={image}
                 alt={region}
                 key={region}
+                onMouseEnter={() => onChartMouseOver(region, 2018)}
+                onMouseLeave={() => onChartMouseOver(null, null)}
+                onClick={() => onChartClick(index, 2018)}
               />
             );
           })}
@@ -77,7 +88,11 @@ export const RadarChart2018 = () => {
   );
 };
 
-export const RadarChart2019 = () => {
+export const RadarChart2019 = ({
+  onChartMouseOver,
+  hoveredChart,
+  onChartClick,
+}) => {
   return (
     <>
       <div className="descriptions">
@@ -106,16 +121,23 @@ export const RadarChart2019 = () => {
           광역시를 클릭하여 자세한 현황을 살펴보세요!
         </div>
         <div className="radarchart-container">
-          {region_names.map((region) => {
+          {region_names.map((region, index) => {
             const imageKey = `${region}2019`;
             const image = images2019[imageKey];
 
             return (
               <img
-                className="radarchart"
+                className={`radarchart ${
+                  hoveredChart.region === region && hoveredChart.year === 2019
+                    ? "hovered"
+                    : ""
+                }`}
                 src={image}
                 alt={region}
                 key={region}
+                onMouseEnter={() => onChartMouseOver(region, 2019)}
+                onMouseLeave={() => onChartMouseOver(null, null)}
+                onClick={() => onChartClick(index, 2019)}
               />
             );
           })}
@@ -125,7 +147,11 @@ export const RadarChart2019 = () => {
   );
 };
 
-export const RadarChart2020 = () => {
+export const RadarChart2020 = ({
+  onChartMouseOver,
+  hoveredChart,
+  onChartClick,
+}) => {
   return (
     <>
       <div className="descriptions">
@@ -154,16 +180,23 @@ export const RadarChart2020 = () => {
           광역시를 클릭하여 자세한 현황을 살펴보세요!
         </div>
         <div className="radarchart-container">
-          {region_names.map((region) => {
+          {region_names.map((region, index) => {
             const imageKey = `${region}2020`;
             const image = images2020[imageKey];
 
             return (
               <img
-                className="radarchart"
+                className={`radarchart ${
+                  hoveredChart.region === region && hoveredChart.year === 2020
+                    ? "hovered"
+                    : ""
+                }`}
                 src={image}
                 alt={region}
                 key={region}
+                onMouseEnter={() => onChartMouseOver(region, 2020)}
+                onMouseLeave={() => onChartMouseOver(null, null)}
+                onClick={() => onChartClick(index, 2020)}
               />
             );
           })}
@@ -173,7 +206,11 @@ export const RadarChart2020 = () => {
   );
 };
 
-export const RadarChart2021 = () => {
+export const RadarChart2021 = ({
+  onChartMouseOver,
+  hoveredChart,
+  onChartClick,
+}) => {
   return (
     <>
       <div className="descriptions">
@@ -202,16 +239,23 @@ export const RadarChart2021 = () => {
           광역시를 클릭하여 자세한 현황을 살펴보세요!
         </div>
         <div className="radarchart-container">
-          {region_names.map((region) => {
+          {region_names.map((region, index) => {
             const imageKey = `${region}2021`;
             const image = images2021[imageKey];
 
             return (
               <img
-                className="radarchart"
+                className={`radarchart ${
+                  hoveredChart.region === region && hoveredChart.year === 2021
+                    ? "hovered"
+                    : ""
+                }`}
                 src={image}
                 alt={region}
                 key={region}
+                onMouseEnter={() => onChartMouseOver(region, 2021)}
+                onMouseLeave={() => onChartMouseOver(null, null)}
+                onClick={() => onChartClick(index, 2021)}
               />
             );
           })}
@@ -221,7 +265,11 @@ export const RadarChart2021 = () => {
   );
 };
 
-export const RadarChart2022 = () => {
+export const RadarChart2022 = ({
+  onChartMouseOver,
+  hoveredChart,
+  onChartClick,
+}) => {
   return (
     <>
       <div className="descriptions">
@@ -250,16 +298,23 @@ export const RadarChart2022 = () => {
           광역시를 클릭하여 자세한 현황을 살펴보세요!
         </div>
         <div className="radarchart-container">
-          {region_names.map((region) => {
+          {region_names.map((region, index) => {
             const imageKey = `${region}2022`;
             const image = images2022[imageKey];
 
             return (
               <img
-                className="radarchart"
+                className={`radarchart ${
+                  hoveredChart.region === region && hoveredChart.year === 2022
+                    ? "hovered"
+                    : ""
+                }`}
                 src={image}
                 alt={region}
                 key={region}
+                onMouseEnter={() => onChartMouseOver(region, 2022)}
+                onMouseLeave={() => onChartMouseOver(null, null)}
+                onClick={() => onChartClick(index, 2022)}
               />
             );
           })}
