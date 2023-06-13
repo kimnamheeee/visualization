@@ -8,6 +8,7 @@ import {
 } from "../../assets/images/index";
 import close from "../../assets/images/close.svg";
 import radarDescription from "../../assets/images/radar-description.svg";
+import Select from "react-select";
 
 export const Modal = ({ region, year, setShowModal }) => {
   const region_names = [
@@ -50,7 +51,23 @@ export const Modal = ({ region, year, setShowModal }) => {
     "경남",
   ];
 
+  const regionOptions = region_names_kor.map((region) => ({
+    value: region,
+    label: region,
+  }));
+
+  const years = [2018, 2019, 2020, 2021, 2022];
+
+  const yearOptions = years.map((year) => ({
+    value: year,
+    label: year,
+  }));
+
   const imageKey = `${region_names[region]}${year}`;
+
+  const customComponents = {
+    IndicatorSeparator: () => null, // 인디케이터 구분선 숨기기
+  };
 
   let radarchartImage;
 
@@ -74,6 +91,18 @@ export const Modal = ({ region, year, setShowModal }) => {
       radarchartImage = null;
   }
 
+  const customSelectStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      height: "6vh",
+      width: "14.5vw",
+      borderRadius: "40px",
+      fontFamily: "KyoboHandwriting2021sjy",
+      border: "2px solid #54bfcf",
+      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.16)",
+    }),
+  };
+
   return (
     <div className="modal-background">
       <div className="modal-container">
@@ -84,7 +113,24 @@ export const Modal = ({ region, year, setShowModal }) => {
           alt="닫기"
         />
         <div className="modal-contents">
-          <div className="selection-container"></div>
+          <div className="selection-container">
+            <Select
+              components={customComponents}
+              styles={customSelectStyles}
+              options={yearOptions}
+            ></Select>
+            <Select
+              components={customComponents}
+              styles={customSelectStyles}
+              options={regionOptions}
+            >
+              {/* {region_names_kor.map((regionName, index) => (
+                <option key={index} className="option-value" value={regionName}>
+                  {regionName}
+                </option>
+              ))} */}
+            </Select>
+          </div>
           <div className="totalnumber-container text">
             {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로 총
             원을 지출하였습니다.

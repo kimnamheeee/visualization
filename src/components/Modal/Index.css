@@ -58,3 +58,26 @@
 .text {
   font-family: "KyoboHandwriting2021sjy";
 }
+
+/* .selection {
+  height: 6vh;
+  width: 14.5vw;
+  border-radius: 40px;
+  border: 2px solid #54bfcf;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  background-image: url("../../assets/images/selectionarrow.svg");
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  appearance: none;
+  background-size: 7% auto;
+  background-position: 90%;
+} */
+
+/* .select-arrow {
+  position: absolute;
+  margin-top: 2.6vh;
+} */
+
+.option-value {
+  font-family: "KyoboHandwriting2021sjy";
+}
