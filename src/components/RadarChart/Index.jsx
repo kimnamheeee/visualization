@@ -8,6 +8,7 @@ import {
 import "./Index.css";
 import radarDescription from "../../assets/images/radar-description.svg";
 import gradient from "../../assets/images/gradient.svg";
+import YearBar from "../YearBar/Index";
 
 const region_names = [
   "incheon",
@@ -33,6 +34,8 @@ export const RadarChart2018 = ({
   onChartMouseOver,
   hoveredChart,
   onChartClick,
+  selectedCircle,
+  setSelectedCircle,
 }) => {
   return (
     <>
@@ -83,6 +86,11 @@ export const RadarChart2018 = ({
             );
           })}
         </div>
+        <YearBar
+          className="yearBar"
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -92,6 +100,8 @@ export const RadarChart2019 = ({
   onChartMouseOver,
   hoveredChart,
   onChartClick,
+  selectedCircle,
+  setSelectedCircle,
 }) => {
   return (
     <>
@@ -142,6 +152,10 @@ export const RadarChart2019 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -151,6 +165,8 @@ export const RadarChart2020 = ({
   onChartMouseOver,
   hoveredChart,
   onChartClick,
+  selectedCircle,
+  setSelectedCircle,
 }) => {
   return (
     <>
@@ -201,6 +217,10 @@ export const RadarChart2020 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -210,6 +230,8 @@ export const RadarChart2021 = ({
   onChartMouseOver,
   hoveredChart,
   onChartClick,
+  selectedCircle,
+  setSelectedCircle,
 }) => {
   return (
     <>
@@ -260,6 +282,10 @@ export const RadarChart2021 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -269,6 +295,8 @@ export const RadarChart2022 = ({
   onChartMouseOver,
   hoveredChart,
   onChartClick,
+  selectedCircle,
+  setSelectedCircle,
 }) => {
   return (
     <>
@@ -319,6 +347,10 @@ export const RadarChart2022 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );

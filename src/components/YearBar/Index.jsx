@@ -1,6 +1,7 @@
 import "./YearBar.css";
 
-const YearBar = ({ selectedCircle, setSelectedCircle }) => {
+const YearBar = (props) => {
+  const { selectedCircle, setSelectedCircle } = props;
   return (
     <div className="yearbar-container">
       <div className="circle-container">

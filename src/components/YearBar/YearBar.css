@@ -7,6 +7,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  margin-left: 75vw;
+  margin-top: 57vh;
 }
 
 .number {

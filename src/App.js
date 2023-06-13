@@ -100,6 +100,8 @@ function App() {
           onChartMouseOver={handleChartMouseOver}
           onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
         />
       );
       break;
@@ -109,6 +111,8 @@ function App() {
           onChartMouseOver={handleChartMouseOver}
           onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
         />
       );
       break;
@@ -118,6 +122,8 @@ function App() {
           onChartMouseOver={handleChartMouseOver}
           onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
         />
       );
       break;
@@ -127,6 +133,8 @@ function App() {
           onChartMouseOver={handleChartMouseOver}
           onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
         />
       );
       break;
@@ -136,6 +144,8 @@ function App() {
           onChartMouseOver={handleChartMouseOver}
           onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
         />
       );
       break;
@@ -167,12 +177,12 @@ function App() {
             />
           )}
           {radarChart}
-          <div className="main-yearbar">
+          {/* <div className="main-yearbar">
             <YearBar
               selectedCircle={selectedCircle}
               setSelectedCircle={setSelectedCircle}
             />
-          </div>
+          </div> */}
         </Section>
       </SectionsContainer>
     </div>
