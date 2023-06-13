@@ -1,5 +1,6 @@
 import "./Index.css";
 import mainpage1text from "../../assets/images/mainpage1text.svg";
+import barchart from "../../assets/images/barchart.svg";
 import Scroller from "../Scroller/Scroller";
 
 export const MainPage1 = () => {
@@ -26,7 +27,25 @@ export const MainPage2 = () => {
 };
 
 export const MainPage3 = () => {
-  return <></>;
+  return (
+    <>
+      <div className="maintext3">
+        <div className="text-container">
+          <div>
+            280조의 예산에도 불구하고 합계출산율은 2022년 0.78명으로 떨어졌으며
+          </div>
+          <div>출생아 수는 15년만에 반토막이 났습니다.</div>
+        </div>
+        <div className="image-container">
+          <img
+            className="barchart"
+            alt="출산율 변화 바 그래프"
+            src={barchart}
+          />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export const MainPage4 = () => {

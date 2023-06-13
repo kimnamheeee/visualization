@@ -1,11 +1,8 @@
 .maintext {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 38%;
-  height: 30%;
-  margin: 0 auto;
-  transform: translate(0, 40%);
+  margin-top: 24vh;
+  height: 30.5vh;
 }
 
 .maintext4 {
@@ -30,4 +27,29 @@
   align-items: center;
   line-height: 7.4vh;
   margin-top: 15%;
+}
+
+.maintext3 {
+  font-family: "KyoboHandwriting2021sjy";
+  font-size: 4.4vh;
+  line-height: 6.4vh;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8.3vh;
+}
+
+.text-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barchart {
+  height: 81.4vh;
+  margin-top: -4.6vh;
+  z-index: -1;
 }
