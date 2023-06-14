@@ -58,6 +58,10 @@
   font-family: "KyoboHandwriting2021sjy";
 }
 
+.explanation {
+  font-size: 2.6vh;
+}
+
 /* .selection {
   height: 6vh;
   width: 14.5vw;
