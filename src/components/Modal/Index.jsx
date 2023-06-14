@@ -92,12 +92,18 @@ export const Modal = ({ region, year, setShowModal }) => {
   }
 
   const customSelectStyles = {
+    menu: (provided, state) => ({
+      ...provided,
+      fontSize: "1.38vh",
+    }),
     control: (provided, state) => ({
       ...provided,
       height: "6vh",
       width: "14.5vw",
       borderRadius: "40px",
       fontFamily: "KyoboHandwriting2021sjy",
+      paddingLeft: "1vw",
+      fontSize: "2.7vh",
       border: "2px solid #54bfcf",
       boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.16)",
     }),
@@ -123,13 +129,8 @@ export const Modal = ({ region, year, setShowModal }) => {
               components={customComponents}
               styles={customSelectStyles}
               options={regionOptions}
-            >
-              {/* {region_names_kor.map((regionName, index) => (
-                <option key={index} className="option-value" value={regionName}>
-                  {regionName}
-                </option>
-              ))} */}
-            </Select>
+              maxMenuHeight={500}
+            />
           </div>
           <div className="totalnumber-container text">
             {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로 총

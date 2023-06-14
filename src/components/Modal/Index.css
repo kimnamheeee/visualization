@@ -2,7 +2,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
-  position: fixed;
   z-index: 30;
   top: 0;
   display: flex;
@@ -78,6 +77,13 @@
   margin-top: 2.6vh;
 } */
 
-.option-value {
+/* .option-value {
   font-family: "KyoboHandwriting2021sjy";
+} */
+
+.selection-container {
+  display: flex;
+  width: 30.7vw;
+  justify-content: space-between;
+  margin-top: 4vh;
 }
