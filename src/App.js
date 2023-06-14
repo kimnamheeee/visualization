@@ -5,7 +5,7 @@ import {
   MainPage3,
   MainPage4,
 } from "./components/MainPage/Index";
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import {
   RadarChart2018,
   RadarChart2019,
@@ -13,51 +13,9 @@ import {
   RadarChart2021,
   RadarChart2022,
 } from "./components/RadarChart/Index";
-import YearBar from "./components/YearBar/Index";
-import { Modal } from "./components/Modal/Index";
 import { SectionsContainer, Section } from "react-fullpage";
 
 function App() {
-  // const [scrollAttempts, setScrollAttempts] = useState(0);
-  // const [showMainPage, setShowMainPage] = useState(1);
-
-  // const handleWheel = useCallback(
-  //   throttle((event) => {
-  //     const deltaY = event.deltaY;
-  //     if (deltaY > 10) {
-  //       setScrollAttempts((prevAttempts) => prevAttempts + 1);
-  //     } else if (deltaY < -10 && scrollAttempts > 0) {
-  //       setScrollAttempts((prevAttempts) => prevAttempts - 1);
-  //     }
-  //   }, 500),
-  //   [scrollAttempts]
-  // );
-
-  // useEffect(() => {
-  //   window.addEventListener("wheel", handleWheel);
-
-  //   return () => {
-  //     window.removeEventListener("wheel", handleWheel);
-  //   };
-  // }, [handleWheel]);
-
-  // useEffect(() => {
-  //   console.log("attempt", scrollAttempts);
-  //   if (scrollAttempts >= 0 && scrollAttempts <= 10) {
-  //     setShowMainPage(1);
-  //   } else if (scrollAttempts > 10 && scrollAttempts <= 35) {
-  //     setShowMainPage(2);
-  //   } else if (scrollAttempts > 35 && scrollAttempts <= 55) {
-  //     setShowMainPage(3);
-  //   } else if (scrollAttempts > 55 && scrollAttempts <= 80) {
-  //     setShowMainPage(4);
-  //   } else if (scrollAttempts > 80 && scrollAttempts <= 100) {
-  //     setShowMainPage(5);
-  //   } else {
-  //     setScrollAttempts(100);
-  //   }
-  // }, [scrollAttempts]);
-
   const options = {
     anchors: [
       "mainPage1",
@@ -76,7 +34,6 @@ function App() {
     year: null,
   });
 
-  const [showModal, setShowModal] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState({
     year: null,
     region: null,
@@ -86,11 +43,6 @@ function App() {
     setHoveredChart({ region, year });
   };
 
-  const handleChartClick = (region, year) => {
-    setSelectedRegion({ region, year });
-    setShowModal(true);
-  };
-
   let radarChart;
 
   switch (selectedCircle) {
@@ -98,10 +50,11 @@ function App() {
       radarChart = (
         <RadarChart2018
           onChartMouseOver={handleChartMouseOver}
-          onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
           selectedCircle={selectedCircle}
           setSelectedCircle={setSelectedCircle}
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
         />
       );
       break;
@@ -109,10 +62,11 @@ function App() {
       radarChart = (
         <RadarChart2019
           onChartMouseOver={handleChartMouseOver}
-          onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
           selectedCircle={selectedCircle}
           setSelectedCircle={setSelectedCircle}
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
         />
       );
       break;
@@ -120,10 +74,11 @@ function App() {
       radarChart = (
         <RadarChart2020
           onChartMouseOver={handleChartMouseOver}
-          onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
           selectedCircle={selectedCircle}
           setSelectedCircle={setSelectedCircle}
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
         />
       );
       break;
@@ -131,10 +86,11 @@ function App() {
       radarChart = (
         <RadarChart2021
           onChartMouseOver={handleChartMouseOver}
-          onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
           selectedCircle={selectedCircle}
           setSelectedCircle={setSelectedCircle}
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
         />
       );
       break;
@@ -142,10 +98,11 @@ function App() {
       radarChart = (
         <RadarChart2022
           onChartMouseOver={handleChartMouseOver}
-          onChartClick={handleChartClick}
           hoveredChart={hoveredChart}
           selectedCircle={selectedCircle}
           setSelectedCircle={setSelectedCircle}
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
         />
       );
       break;
@@ -168,22 +125,7 @@ function App() {
         <Section>
           <MainPage4 />
         </Section>
-        <Section>
-          {showModal && (
-            <Modal
-              region={selectedRegion.region}
-              year={selectedRegion.year}
-              setShowModal={setShowModal}
-            />
-          )}
-          {radarChart}
-          {/* <div className="main-yearbar">
-            <YearBar
-              selectedCircle={selectedCircle}
-              setSelectedCircle={setSelectedCircle}
-            />
-          </div> */}
-        </Section>
+        <Section>{radarChart}</Section>
       </SectionsContainer>
     </div>
   );
