@@ -8,6 +8,9 @@ import {
 import "./Index.css";
 import radarDescription from "../../assets/images/radar-description.svg";
 import gradient from "../../assets/images/gradient.svg";
+import YearBar from "../YearBar/Index";
+import { useState } from "react";
+import { Modal } from "../Modal/Index";
 
 const region_names = [
   "incheon",
@@ -32,10 +35,29 @@ const region_names = [
 export const RadarChart2018 = ({
   onChartMouseOver,
   hoveredChart,
-  onChartClick,
+  selectedCircle,
+  setSelectedCircle,
+  selectedRegion,
+  setSelectedRegion,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onChartClick = (region, year) => {
+    console.log("clicked", region, year);
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+    console.log("modal", showModal);
+  };
+
   return (
     <>
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       <div className="descriptions">
         <div className="description-title">생애주기별 저출산 정책 예산</div>
         <img
@@ -83,6 +105,11 @@ export const RadarChart2018 = ({
             );
           })}
         </div>
+        <YearBar
+          className="yearBar"
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -91,10 +118,29 @@ export const RadarChart2018 = ({
 export const RadarChart2019 = ({
   onChartMouseOver,
   hoveredChart,
-  onChartClick,
+  selectedCircle,
+  setSelectedCircle,
+  selectedRegion,
+  setSelectedRegion,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onChartClick = (region, year) => {
+    console.log("clicked", region, year);
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+    console.log("modal", showModal);
+  };
+
   return (
     <>
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       <div className="descriptions">
         <div className="description-title">생애주기별 저출산 정책 예산</div>
         <img
@@ -142,6 +188,10 @@ export const RadarChart2019 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -150,10 +200,29 @@ export const RadarChart2019 = ({
 export const RadarChart2020 = ({
   onChartMouseOver,
   hoveredChart,
-  onChartClick,
+  selectedCircle,
+  setSelectedCircle,
+  selectedRegion,
+  setSelectedRegion,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onChartClick = (region, year) => {
+    console.log("clicked", region, year);
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+    console.log("modal", showModal);
+  };
+
   return (
     <>
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       <div className="descriptions">
         <div className="description-title">생애주기별 저출산 정책 예산</div>
         <img
@@ -201,6 +270,10 @@ export const RadarChart2020 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -209,10 +282,29 @@ export const RadarChart2020 = ({
 export const RadarChart2021 = ({
   onChartMouseOver,
   hoveredChart,
-  onChartClick,
+  selectedCircle,
+  setSelectedCircle,
+  selectedRegion,
+  setSelectedRegion,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onChartClick = (region, year) => {
+    console.log("clicked", region, year);
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+    console.log("modal", showModal);
+  };
+
   return (
     <>
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       <div className="descriptions">
         <div className="description-title">생애주기별 저출산 정책 예산</div>
         <img
@@ -260,6 +352,10 @@ export const RadarChart2021 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
@@ -268,10 +364,29 @@ export const RadarChart2021 = ({
 export const RadarChart2022 = ({
   onChartMouseOver,
   hoveredChart,
-  onChartClick,
+  selectedCircle,
+  setSelectedCircle,
+  selectedRegion,
+  setSelectedRegion,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const onChartClick = (region, year) => {
+    console.log("clicked", region, year);
+    setSelectedRegion({ region, year });
+    setShowModal(true);
+    console.log("modal", showModal);
+  };
+
   return (
     <>
+      {showModal && (
+        <Modal
+          region={selectedRegion.region}
+          year={selectedRegion.year}
+          setShowModal={setShowModal}
+        />
+      )}
       <div className="descriptions">
         <div className="description-title">생애주기별 저출산 정책 예산</div>
         <img
@@ -319,6 +434,10 @@ export const RadarChart2022 = ({
             );
           })}
         </div>
+        <YearBar
+          selectedCircle={selectedCircle}
+          setSelectedCircle={setSelectedCircle}
+        />
       </div>
     </>
   );
