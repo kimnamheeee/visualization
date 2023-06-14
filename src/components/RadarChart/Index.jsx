@@ -46,7 +46,6 @@ export const RadarChart2018 = ({
     console.log("clicked", region, year);
     setSelectedRegion({ region, year });
     setShowModal(true);
-    console.log("modal", showModal);
   };
 
   return (
@@ -56,6 +55,8 @@ export const RadarChart2018 = ({
           region={selectedRegion.region}
           year={selectedRegion.year}
           setShowModal={setShowModal}
+          setSelectedRegion={setSelectedRegion}
+          selectedRegion={selectedRegion}
         />
       )}
       <div className="descriptions">
@@ -139,6 +140,8 @@ export const RadarChart2019 = ({
           region={selectedRegion.region}
           year={selectedRegion.year}
           setShowModal={setShowModal}
+          setSelectedRegion={setSelectedRegion}
+          selectedRegion={selectedRegion}
         />
       )}
       <div className="descriptions">
@@ -221,6 +224,8 @@ export const RadarChart2020 = ({
           region={selectedRegion.region}
           year={selectedRegion.year}
           setShowModal={setShowModal}
+          setSelectedRegion={setSelectedRegion}
+          selectedRegion={selectedRegion}
         />
       )}
       <div className="descriptions">
@@ -303,6 +308,8 @@ export const RadarChart2021 = ({
           region={selectedRegion.region}
           year={selectedRegion.year}
           setShowModal={setShowModal}
+          setSelectedRegion={setSelectedRegion}
+          selectedRegion={selectedRegion}
         />
       )}
       <div className="descriptions">
@@ -385,6 +392,8 @@ export const RadarChart2022 = ({
           region={selectedRegion.region}
           year={selectedRegion.year}
           setShowModal={setShowModal}
+          setSelectedRegion={setSelectedRegion}
+          selectedRegion={selectedRegion}
         />
       )}
       <div className="descriptions">

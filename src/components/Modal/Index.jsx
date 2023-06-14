@@ -10,9 +10,15 @@ import close from "../../assets/images/close.svg";
 import radarDescription from "../../assets/images/radar-description.svg";
 import Select from "react-select";
 import datas from "../../data/datas.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export const Modal = ({ region, year, setShowModal }) => {
+export const Modal = ({
+  region,
+  year,
+  setShowModal,
+  selectedRegion,
+  setSelectedRegion,
+}) => {
   const region_names = [
     "incheon",
     "gangwon",
@@ -53,10 +59,24 @@ export const Modal = ({ region, year, setShowModal }) => {
     "경남",
   ];
 
-  const regionOptions = region_names_kor.map((region) => ({
-    value: region,
+  const regionOptions = region_names_kor.map((region, idx) => ({
+    value: idx,
     label: region,
   }));
+
+  const handleRegionChange = (selectedOption) => {
+    setSelectedRegion({
+      ...selectedRegion,
+      region: selectedOption.value,
+    });
+  };
+
+  const handleYearChange = (selectedOption) => {
+    setSelectedRegion({
+      ...selectedRegion,
+      year: selectedOption.value,
+    });
+  };
 
   const years = [2018, 2019, 2020, 2021, 2022];
 
@@ -68,15 +88,20 @@ export const Modal = ({ region, year, setShowModal }) => {
     datas[year][region_names_kor[region]]["예산"]
   );
 
+  useEffect(() => {
+    const regionKey = region_names_kor[region];
+    if (year && regionKey) {
+      setTotalValue(datas[year][regionKey]["예산"]["total"] * 1000000);
+      setYearRegionBudget(datas[year][regionKey]["예산"]);
+    }
+  }, [year, region]);
+
   const { total, ...budgetValues } = yearRegionBudget;
 
   const maxBudget = Math.max(...Object.values(budgetValues));
   const maxBudgetKey = Object.keys(budgetValues).find(
     (key) => budgetValues[key] === maxBudget
   );
-
-  console.log("max", maxBudget);
-  console.log("key", maxBudgetKey);
 
   const yearOptions = years.map((year) => ({
     value: year,
@@ -151,6 +176,7 @@ export const Modal = ({ region, year, setShowModal }) => {
               styles={customSelectStyles}
               options={yearOptions}
               defaultValue={defaultYearOption}
+              onChange={handleYearChange}
             ></Select>
             <Select
               components={customComponents}
@@ -158,6 +184,7 @@ export const Modal = ({ region, year, setShowModal }) => {
               options={regionOptions}
               maxMenuHeight={500}
               defaultValue={defaultRegionOption}
+              onChange={handleRegionChange}
             />
           </div>
           <div className="totalnumber-container text">
