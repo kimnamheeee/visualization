@@ -11,9 +11,10 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  top: 75%;
+  /* top: 79vh; */
+  margin-top: 19.5vh;
   background-color: transparent;
 }
 
