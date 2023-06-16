@@ -193,7 +193,6 @@ export const Modal = ({
     } else {
       setSelectedButtons([...selectedButtons, button]);
     }
-    console.log(itemsArray);
   };
 
   return (
