@@ -69,6 +69,8 @@ export const Modal = ({
     "경남",
   ];
 
+  const [isSecondPage, setIsSecondPage] = useState(false);
+
   const regionOptions = region_names_kor.map((region, idx) => ({
     value: idx,
     label: region,
@@ -187,67 +189,106 @@ export const Modal = ({
           onClick={() => setShowModal(false)}
           alt="닫기"
         />
-        <div className="modal-contents">
-          <div className="selection-container">
-            <Select
-              components={customComponents}
-              styles={customSelectStyles}
-              options={yearOptions}
-              defaultValue={defaultYearOption}
-              onChange={handleYearChange}
-            ></Select>
-            <Select
-              components={customComponents}
-              styles={customSelectStyles}
-              options={regionOptions}
-              maxMenuHeight={500}
-              defaultValue={defaultRegionOption}
-              onChange={handleRegionChange}
-            />
-          </div>
-          <div className="totalnumber-container text">
-            {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로 총{" "}
-            <span style={{ color: "#54BFCF" }}>
-              {totalValue.toLocaleString()}
-            </span>
-            원을 책정하였습니다.
-          </div>
-          <div className="charts-container">
-            <div className="radar">
-              <img
-                className="chart-description"
-                alt="레이더차트 꼭짓점 설명"
-                src={radarDescription}
-              />
-              <img
-                className="detail-radarchart"
-                src={radarchartImage}
-                alt="radarchart"
-              />
-            </div>
-            <div className="subchart">
-              <div className="sub-xaxis">금액(만 원)</div>
-              <img className="subchart-img" src={subImage} alt="subchart" />
-              <img
-                className="sub-legend"
-                src={subLegend}
-                alt="sub description"
-              />
-            </div>
-          </div>
-          <div className="explanation-container">
-            <div className="text explanation">
-              그 중 가장 많은 예산이 편성된 단계는 {maxBudgetKey}(으)로, 총{" "}
+        {isSecondPage ? (
+          <div className="modal-contents page2">
+            <div className="totalnumber-container text page2-total">
+              {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로
+              총{" "}
               <span style={{ color: "#54BFCF" }}>
-                {(maxBudget * 1000000).toLocaleString()}
+                {totalValue.toLocaleString()}
               </span>
-              원이 책정되었습니다.
+              원을 책정하였습니다.
+              <div>
+                아래 메뉴를 통해 어떠한 정책이 있었는지 자세히 알아보세요.
+              </div>
             </div>
-            <div className="text explanation">
-              어떠한 정책들이 있었는지 자세히 알아볼까요?
+            <div className="buttons-container">
+              <div className="button-category">단계</div>
+              <button className="filter-button">결혼</button>
+              <button className="filter-button">임신</button>
+              <button className="filter-button">출산</button>
+              <button className="filter-button">육아</button>
+              <button className="filter-button">가족</button>
+              <div className="selectall-container">
+                <div className="selectall">전체 선택</div>
+                <div className="clearall">전체 선택 해제</div>
+              </div>
+            </div>
+            <div className="filtered-contents"></div>
+            <div
+              className="next text page2-next"
+              onClick={() => setIsSecondPage(false)}
+            >
+              👉 뒤로가기
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="modal-contents page1">
+            <div className="selection-container">
+              <Select
+                components={customComponents}
+                styles={customSelectStyles}
+                options={yearOptions}
+                defaultValue={defaultYearOption}
+                onChange={handleYearChange}
+              ></Select>
+              <Select
+                components={customComponents}
+                styles={customSelectStyles}
+                options={regionOptions}
+                maxMenuHeight={500}
+                defaultValue={defaultRegionOption}
+                onChange={handleRegionChange}
+              />
+            </div>
+            <div className="totalnumber-container text">
+              {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로
+              총{" "}
+              <span style={{ color: "#54BFCF" }}>
+                {totalValue.toLocaleString()}
+              </span>
+              원을 책정하였습니다.
+            </div>
+            <div className="charts-container">
+              <div className="radar">
+                <img
+                  className="chart-description"
+                  alt="레이더차트 꼭짓점 설명"
+                  src={radarDescription}
+                />
+                <img
+                  className="detail-radarchart"
+                  src={radarchartImage}
+                  alt="radarchart"
+                />
+              </div>
+              <div className="subchart">
+                <div className="sub-xaxis">금액(만 원)</div>
+                <img className="subchart-img" src={subImage} alt="subchart" />
+                <img
+                  className="sub-legend"
+                  src={subLegend}
+                  alt="sub description"
+                />
+              </div>
+            </div>
+            <div className="explanation-container">
+              <div className="text explanation">
+                그 중 가장 많은 예산이 편성된 단계는 {maxBudgetKey}(으)로, 총{" "}
+                <span style={{ color: "#54BFCF" }}>
+                  {(maxBudget * 1000000).toLocaleString()}
+                </span>
+                원이 책정되었습니다.
+              </div>
+              <div className="text explanation">
+                어떠한 정책들이 있었는지 자세히 알아볼까요?
+              </div>
+            </div>
+            <div className="next text" onClick={() => setIsSecondPage(true)}>
+              👉 정책 보러가기
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
