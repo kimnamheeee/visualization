@@ -102,7 +102,7 @@
 
 .charts-container {
   display: flex;
-  width: 51vw;
+  width: 52vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -128,4 +128,82 @@
   margin-top: 9vh;
   margin-left: 26vw;
   position: absolute;
+}
+
+.next {
+  color: #595959;
+  text-align: right;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.page2-total {
+  text-align: center;
+  line-height: 180%;
+}
+
+.filter-button {
+  height: 5vh;
+  width: 5.2vw;
+  border: 2px solid #d9d9d9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+  border-radius: 40px;
+  background: #ffffff;
+  margin-right: 1vw;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+.buttons-container {
+  display: flex;
+  font-family: "Noto Sans KR";
+  align-items: center;
+  width: 53.125vw;
+  color: #595959;
+  line-height: 150%;
+  font-weight: 400;
+  font-size: 2vh;
+}
+
+.button-category {
+  margin-right: 3.1vw;
+}
+
+.filtered-contents {
+  border: 2px solid #54bfcf;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  height: 42.6vh;
+  width: 53.125vw;
+}
+
+.page2-next {
+  margin-bottom: -3vh;
+  margin-top: -2.5vh;
+}
+
+.selectall-container {
+  height: 6.8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.7vh;
+  margin-left: 10.5vw;
+}
+
+.selectall {
+  line-height: 150%;
+  color: #54bfcf;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid #54bfcf;
+}
+
+.clearall {
+  line-height: 150%;
+  color: #878787;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid #878787;
 }

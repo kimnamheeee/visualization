@@ -21,7 +21,9 @@ export const MainPage2 = () => {
         <div>그렇다면 16년 동안</div>
         <div>출산율에는 어떤 변화가 있었을까요?</div>
       </div>
-      <Scroller />
+      <div className="scroller-margin">
+        <Scroller />
+      </div>
     </>
   );
 };
