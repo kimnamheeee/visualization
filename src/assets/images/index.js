@@ -88,6 +88,96 @@ import jeju2022 from "./radarcharts/2022/jeju.png";
 import chungnam2022 from "./radarcharts/2022/chungnam.png";
 import chungbook2022 from "./radarcharts/2022/chungbook.png";
 
+import gangwonsub2018 from "./sub/2018/2018_강원.png";
+import gyeonggisub2018 from "./sub/2018/2018_경기.png";
+import gyeongnamsub2018 from "./sub/2018/2018_경남.png";
+import gyeongbooksub2018 from "./sub/2018/2018_경북.png";
+import gwangjusub2018 from "./sub/2018/2018_광주.png";
+import daegusub2018 from "./sub/2018/2018_대구.png";
+import daejeonsub2018 from "./sub/2018/2018_대전.png";
+import busansub2018 from "./sub/2018/2018_부산.png";
+import seoulsub2018 from "./sub/2018/2018_서울.png";
+import saejongsub2018 from "./sub/2018/2018_세종.png";
+import ulsansub2018 from "./sub/2018/2018_울산.png";
+import incheonsub2018 from "./sub/2018/2018_인천.png";
+import jeonnamsub2018 from "./sub/2018/2018_전남.png";
+import jeonbooksub2018 from "./sub/2018/2018_전북.png";
+import jejusub2018 from "./sub/2018/2018_제주.png";
+import chungnamsub2018 from "./sub/2018/2018_충남.png";
+import chungbooksub2018 from "./sub/2018/2018_충북.png";
+
+import gangwonsub2019 from "./sub/2019/2019_강원.png";
+import gyeonggisub2019 from "./sub/2019/2019_경기.png";
+import gyeongnamsub2019 from "./sub/2019/2019_경남.png";
+import gyeongbooksub2019 from "./sub/2019/2019_경북.png";
+import gwangjusub2019 from "./sub/2019/2019_광주.png";
+import daegusub2019 from "./sub/2019/2019_대구.png";
+import daejeonsub2019 from "./sub/2019/2019_대전.png";
+import busansub2019 from "./sub/2019/2019_부산.png";
+import seoulsub2019 from "./sub/2019/2019_서울.png";
+import saejongsub2019 from "./sub/2019/2019_세종.png";
+import ulsansub2019 from "./sub/2019/2019_울산.png";
+import incheonsub2019 from "./sub/2019/2019_인천.png";
+import jeonnamsub2019 from "./sub/2019/2019_전남.png";
+import jeonbooksub2019 from "./sub/2019/2019_전북.png";
+import jejusub2019 from "./sub/2019/2019_제주.png";
+import chungnamsub2019 from "./sub/2019/2019_충남.png";
+import chungbooksub2019 from "./sub/2019/2019_충북.png";
+
+import gangwonsub2020 from "./sub/2020/2020_강원.png";
+import gyeonggisub2020 from "./sub/2020/2020_경기.png";
+import gyeongnamsub2020 from "./sub/2020/2020_경남.png";
+import gyeongbooksub2020 from "./sub/2020/2020_경북.png";
+import gwangjusub2020 from "./sub/2020/2020_광주.png";
+import daegusub2020 from "./sub/2020/2020_대구.png";
+import daejeonsub2020 from "./sub/2020/2020_대전.png";
+import busansub2020 from "./sub/2020/2020_부산.png";
+import seoulsub2020 from "./sub/2020/2020_서울.png";
+import saejongsub2020 from "./sub/2020/2020_세종.png";
+import ulsansub2020 from "./sub/2020/2020_울산.png";
+import incheonsub2020 from "./sub/2020/2020_인천.png";
+import jeonnamsub2020 from "./sub/2020/2020_전남.png";
+import jeonbooksub2020 from "./sub/2020/2020_전북.png";
+import jejusub2020 from "./sub/2020/2020_제주.png";
+import chungnamsub2020 from "./sub/2020/2020_충남.png";
+import chungbooksub2020 from "./sub/2020/2020_충북.png";
+
+import gangwonsub2021 from "./sub/2021/2021_강원.png";
+import gyeonggisub2021 from "./sub/2021/2021_경기.png";
+import gyeongnamsub2021 from "./sub/2021/2021_경남.png";
+import gyeongbooksub2021 from "./sub/2021/2021_경북.png";
+import gwangjusub2021 from "./sub/2021/2021_광주.png";
+import daegusub2021 from "./sub/2021/2021_대구.png";
+import daejeonsub2021 from "./sub/2021/2021_대전.png";
+import busansub2021 from "./sub/2021/2021_부산.png";
+import seoulsub2021 from "./sub/2021/2021_서울.png";
+import saejongsub2021 from "./sub/2021/2021_세종.png";
+import ulsansub2021 from "./sub/2021/2021_울산.png";
+import incheonsub2021 from "./sub/2021/2021_인천.png";
+import jeonnamsub2021 from "./sub/2021/2021_전남.png";
+import jeonbooksub2021 from "./sub/2021/2021_전북.png";
+import jejusub2021 from "./sub/2021/2021_제주.png";
+import chungnamsub2021 from "./sub/2021/2021_충남.png";
+import chungbooksub2021 from "./sub/2021/2021_충북.png";
+
+import gangwonsub2022 from "./sub/2022/2022_강원.png";
+import gyeonggisub2022 from "./sub/2022/2022_경기.png";
+import gyeongnamsub2022 from "./sub/2022/2022_경남.png";
+import gyeongbooksub2022 from "./sub/2022/2022_경북.png";
+import gwangjusub2022 from "./sub/2022/2022_광주.png";
+import daegusub2022 from "./sub/2022/2022_대구.png";
+import daejeonsub2022 from "./sub/2022/2022_대전.png";
+import busansub2022 from "./sub/2022/2022_부산.png";
+import seoulsub2022 from "./sub/2022/2022_서울.png";
+import saejongsub2022 from "./sub/2022/2022_세종.png";
+import ulsansub2022 from "./sub/2022/2022_울산.png";
+import incheonsub2022 from "./sub/2022/2022_인천.png";
+import jeonnamsub2022 from "./sub/2022/2022_전남.png";
+import jeonbooksub2022 from "./sub/2022/2022_전북.png";
+import jejusub2022 from "./sub/2022/2022_제주.png";
+import chungnamsub2022 from "./sub/2022/2022_충남.png";
+import chungbooksub2022 from "./sub/2022/2022_충북.png";
+
 export const images2018 = {
   gangwon2018,
   gyeonggi2018,
@@ -186,4 +276,104 @@ export const images2022 = {
   jeju2022,
   chungnam2022,
   chungbook2022,
+};
+
+export const sub2018 = {
+  gangwonsub2018,
+  gyeonggisub2018,
+  gyeongnamsub2018,
+  gyeongbooksub2018,
+  gwangjusub2018,
+  daegusub2018,
+  daejeonsub2018,
+  busansub2018,
+  seoulsub2018,
+  saejongsub2018,
+  ulsansub2018,
+  incheonsub2018,
+  jeonnamsub2018,
+  jeonbooksub2018,
+  jejusub2018,
+  chungnamsub2018,
+  chungbooksub2018,
+};
+
+export const sub2019 = {
+  gangwonsub2019,
+  gyeonggisub2019,
+  gyeongnamsub2019,
+  gyeongbooksub2019,
+  gwangjusub2019,
+  daegusub2019,
+  daejeonsub2019,
+  busansub2019,
+  seoulsub2019,
+  saejongsub2019,
+  ulsansub2019,
+  incheonsub2019,
+  jeonnamsub2019,
+  jeonbooksub2019,
+  jejusub2019,
+  chungnamsub2019,
+  chungbooksub2019,
+};
+
+export const sub2020 = {
+  gangwonsub2020,
+  gyeonggisub2020,
+  gyeongnamsub2020,
+  gyeongbooksub2020,
+  gwangjusub2020,
+  daegusub2020,
+  daejeonsub2020,
+  busansub2020,
+  seoulsub2020,
+  saejongsub2020,
+  ulsansub2020,
+  incheonsub2020,
+  jeonnamsub2020,
+  jeonbooksub2020,
+  jejusub2020,
+  chungnamsub2020,
+  chungbooksub2020,
+};
+
+export const sub2021 = {
+  gangwonsub2021,
+  gyeonggisub2021,
+  gyeongnamsub2021,
+  gyeongbooksub2021,
+  gwangjusub2021,
+  daegusub2021,
+  daejeonsub2021,
+  busansub2021,
+  seoulsub2021,
+  saejongsub2021,
+  ulsansub2021,
+  incheonsub2021,
+  jeonnamsub2021,
+  jeonbooksub2021,
+  jejusub2021,
+  chungnamsub2021,
+  chungbooksub2021,
+};
+
+export const sub2022 = {
+  gangwonsub2022,
+  gyeonggisub2022,
+  gyeongnamsub2022,
+  gyeongbooksub2022,
+  gwangjusub2022,
+  daegusub2022,
+  daejeonsub2022,
+  busansub2022,
+  seoulsub2022,
+  saejongsub2022,
+  ulsansub2022,
+  incheonsub2022,
+  jeonnamsub2022,
+  jeonbooksub2022,
+  jejusub2022,
+  chungnamsub2022,
+  chungbooksub2022,
 };
