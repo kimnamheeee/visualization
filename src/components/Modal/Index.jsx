@@ -206,6 +206,7 @@ export const Modal = ({
                 src={radarchartImage}
                 alt="radarchart"
               />
+              <div className="subchart"></div>
             </div>
           </div>
           <div className="explanation-container">
