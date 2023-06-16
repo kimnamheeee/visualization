@@ -6,8 +6,18 @@ import {
   images2021,
   images2022,
 } from "../../assets/images/index";
+
+import {
+  sub2018,
+  sub2019,
+  sub2020,
+  sub2021,
+  sub2022,
+} from "../../assets/images/index";
+
 import close from "../../assets/images/close.svg";
 import radarDescription from "../../assets/images/radar-description.svg";
+import subLegend from "../../assets/images/sub-legend.svg";
 import Select from "react-select";
 import datas from "../../data/datas.json";
 import { useState, useEffect } from "react";
@@ -109,31 +119,39 @@ export const Modal = ({
   }));
 
   const imageKey = `${region_names[region]}${year}`;
+  const subKey = `${region_names[region]}sub${year}`;
 
   const customComponents = {
     IndicatorSeparator: () => null, // 인디케이터 구분선 숨기기
   };
 
   let radarchartImage;
+  let subImage;
 
   switch (year) {
     case 2018:
       radarchartImage = images2018[imageKey];
+      subImage = sub2018[subKey];
       break;
     case 2019:
       radarchartImage = images2019[imageKey];
+      subImage = sub2019[subKey];
       break;
     case 2020:
       radarchartImage = images2020[imageKey];
+      subImage = sub2020[subKey];
       break;
     case 2021:
       radarchartImage = images2021[imageKey];
+      subImage = sub2021[subKey];
       break;
     case 2022:
       radarchartImage = images2022[imageKey];
+      subImage = sub2022[subKey];
       break;
     default:
       radarchartImage = null;
+      subImage = null;
   }
 
   const customSelectStyles = {
@@ -206,7 +224,15 @@ export const Modal = ({
                 src={radarchartImage}
                 alt="radarchart"
               />
-              <div className="subchart"></div>
+            </div>
+            <div className="subchart">
+              <div className="sub-xaxis">금액(만 원)</div>
+              <img className="subchart-img" src={subImage} alt="subchart" />
+              <img
+                className="sub-legend"
+                src={subLegend}
+                alt="sub description"
+              />
             </div>
           </div>
           <div className="explanation-container">
