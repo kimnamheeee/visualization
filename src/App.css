@@ -6,6 +6,12 @@
   font-style: normal;
 }
 
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .App {
   height: 100%;
   width: 100%;
