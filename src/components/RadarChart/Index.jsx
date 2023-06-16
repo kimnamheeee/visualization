@@ -43,7 +43,6 @@ export const RadarChart2018 = ({
   const [showModal, setShowModal] = useState(false);
 
   const onChartClick = (region, year) => {
-    console.log("clicked", region, year);
     setSelectedRegion({ region, year });
     setShowModal(true);
   };

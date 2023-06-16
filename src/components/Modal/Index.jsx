@@ -70,6 +70,7 @@ export const Modal = ({
   ];
 
   const [isSecondPage, setIsSecondPage] = useState(false);
+  const [itemsArray, setItemsArray] = useState([]);
 
   const regionOptions = region_names_kor.map((region, idx) => ({
     value: idx,
@@ -105,6 +106,8 @@ export const Modal = ({
     if (year && regionKey) {
       setTotalValue(datas[year][regionKey]["예산"]["total"] * 1000000);
       setYearRegionBudget(datas[year][regionKey]["예산"]);
+      setSelectedButtons(["결혼", "임신", "출산", "육아", "가족"]);
+      setItemsArray(Object.values(datas[year][regionKey]["items"]));
     }
   }, [year, region]);
 
@@ -180,6 +183,18 @@ export const Modal = ({
     label: region_names_kor[region],
   };
 
+  const [selectedButtons, setSelectedButtons] = useState([]);
+
+  const handleButtonClick = (button) => {
+    if (selectedButtons.includes(button)) {
+      setSelectedButtons(
+        selectedButtons.filter((selectedButton) => selectedButton !== button)
+      );
+    } else {
+      setSelectedButtons([...selectedButtons, button]);
+    }
+  };
+
   return (
     <div className="modal-background">
       <div className="modal-container">
@@ -204,17 +219,102 @@ export const Modal = ({
             </div>
             <div className="buttons-container">
               <div className="button-category">단계</div>
-              <button className="filter-button">결혼</button>
-              <button className="filter-button">임신</button>
-              <button className="filter-button">출산</button>
-              <button className="filter-button">육아</button>
-              <button className="filter-button">가족</button>
+              <button
+                className={`filter-button ${
+                  selectedButtons.includes("결혼") ? "filtered" : ""
+                }`}
+                onClick={() => handleButtonClick("결혼")}
+              >
+                결혼
+              </button>
+              <button
+                className={`filter-button ${
+                  selectedButtons.includes("임신") ? "filtered" : ""
+                }`}
+                onClick={() => handleButtonClick("임신")}
+              >
+                임신
+              </button>
+              <button
+                className={`filter-button ${
+                  selectedButtons.includes("출산") ? "filtered" : ""
+                }`}
+                onClick={() => handleButtonClick("출산")}
+              >
+                출산
+              </button>
+              <button
+                className={`filter-button ${
+                  selectedButtons.includes("육아") ? "filtered" : ""
+                }`}
+                onClick={() => handleButtonClick("육아")}
+              >
+                육아
+              </button>
+              <button
+                className={`filter-button ${
+                  selectedButtons.includes("가족") ? "filtered" : ""
+                }`}
+                onClick={() => handleButtonClick("가족")}
+              >
+                가족
+              </button>
               <div className="selectall-container">
-                <div className="selectall">전체 선택</div>
-                <div className="clearall">전체 선택 해제</div>
+                <div
+                  className="selectall"
+                  onClick={() => {
+                    setSelectedButtons([
+                      "결혼",
+                      "임신",
+                      "출산",
+                      "육아",
+                      "가족",
+                    ]);
+                  }}
+                >
+                  전체 선택
+                </div>
+                <div
+                  className="clearall"
+                  onClick={() => {
+                    setSelectedButtons([]);
+                  }}
+                >
+                  전체 선택 해제
+                </div>
               </div>
             </div>
-            <div className="filtered-contents"></div>
+            <div className="filtered-contents">
+              {itemsArray
+                .filter((item) => selectedButtons.includes(item.단계))
+                .map((item, index) => (
+                  <div key={index}>
+                    <div className="filtered-title">{item.사업명}</div>
+                    <table className="filtered-table">
+                      <tr className="filtered-table table-title">
+                        <th>년도</th>
+                        <th>지역</th>
+                        <th>단계</th>
+                        <th>구분</th>
+                        <th>지급방식</th>
+                        <th>금액</th>
+                      </tr>
+                      <tr className="filtered-table table-content">
+                        <td>{item.연도}</td>
+                        <td>{item.지역}</td>
+                        <td>{item.단계}</td>
+                        <td>{item.type}</td>
+                        <td>{item.지원유형}</td>
+                        <td>
+                          {item.금액 === 0
+                            ? "비예산"
+                            : (item.금액 * 1000000).toLocaleString()}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                ))}
+            </div>
             <div
               className="next text page2-next"
               onClick={() => setIsSecondPage(false)}
