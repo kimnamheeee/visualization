@@ -190,6 +190,8 @@
 .page2-next {
   margin-bottom: -3vh;
   margin-top: -2.5vh;
+  width: 55vw;
+  text-align: left;
 }
 
 .selectall-container {
@@ -220,7 +222,7 @@
 
 .filtered-table {
   width: 49vw;
-  margin-bottom: 2.2vh;
+  margin-bottom: 3.5vh;
 }
 
 .table-title {
@@ -249,6 +251,28 @@
   font-weight: 500;
   line-height: 150%;
   margin-bottom: 2.2vh;
-
   width: 49vw;
+}
+
+.filtered-contents-container {
+  display: flex;
+  align-items: center;
+}
+
+.move-forwards {
+  border-bottom: 2px solid #878787;
+  border-right: 2px solid #878787;
+  transform: rotate(-45deg);
+  width: 3vh;
+  height: 3vh;
+  cursor: pointer;
+}
+
+.move-backwards {
+  border-top: 2px solid #878787;
+  border-left: 2px solid #878787;
+  transform: rotate(-45deg);
+  width: 3vh;
+  height: 3vh;
+  cursor: pointer;
 }
