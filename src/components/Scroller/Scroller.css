@@ -20,6 +20,7 @@
 
 .scrollarrow {
   margin-bottom: 25px;
+  width: 1.65vw;
 }
 
 /* .scroll_arrows {
@@ -57,4 +58,8 @@
   font-family: "KyoboHandwriting2021sjy";
   margin-left: 7px;
   font-size: 2.1vh;
+}
+
+.scroller-text {
+  color: #878787;
 }

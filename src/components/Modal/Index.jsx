@@ -72,6 +72,12 @@ export const Modal = ({
   const [isSecondPage, setIsSecondPage] = useState(false);
   const [itemsArray, setItemsArray] = useState([]);
 
+  const transformButtonValue = (value) => {
+    if (value === "임신전") return "임신";
+    if (value === "결혼전") return "결혼";
+    return value;
+  };
+
   const regionOptions = region_names_kor.map((region, idx) => ({
     value: idx,
     label: region,
@@ -107,7 +113,14 @@ export const Modal = ({
       setTotalValue(datas[year][regionKey]["예산"]["total"] * 1000000);
       setYearRegionBudget(datas[year][regionKey]["예산"]);
       setSelectedButtons(["결혼", "임신", "출산", "육아", "가족"]);
-      setItemsArray(Object.values(datas[year][regionKey]["items"]));
+      setItemsArray(
+        Object.values(datas[year][regionKey]["items"]).map((item) => {
+          // '단계' 속성 값 변경
+          item.단계 = transformButtonValue(item.단계);
+          return item;
+        })
+      );
+      setStartIndex(0);
     }
   }, [year, region]);
 
@@ -193,6 +206,25 @@ export const Modal = ({
     } else {
       setSelectedButtons([...selectedButtons, button]);
     }
+    console.log(itemsArray);
+  };
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handleMoveForwards = () => {
+    if (startIndex + 2 < itemsArray.length) {
+      setStartIndex((index) => index + 2);
+    } else {
+      console.log("end of page");
+    }
+  };
+
+  const handleMoveBackwards = () => {
+    if (startIndex - 2 >= 0) {
+      setStartIndex((index) => index - 2);
+    } else {
+      console.log("cannot move anymore");
+    }
   };
 
   return (
@@ -206,6 +238,12 @@ export const Modal = ({
         />
         {isSecondPage ? (
           <div className="modal-contents page2">
+            <div
+              className="next text page2-next"
+              onClick={() => setIsSecondPage(false)}
+            >
+              👈 뒤로가기
+            </div>
             <div className="totalnumber-container text page2-total">
               {region_names_kor[region]}은(는) {year}년 저출산 정책의 예산으로
               총{" "}
@@ -284,42 +322,75 @@ export const Modal = ({
                 </div>
               </div>
             </div>
-            <div className="filtered-contents">
-              {itemsArray
-                .filter((item) => selectedButtons.includes(item.단계))
-                .map((item, index) => (
-                  <div key={index}>
-                    <div className="filtered-title">{item.사업명}</div>
-                    <table className="filtered-table">
-                      <tr className="filtered-table table-title">
-                        <th>년도</th>
-                        <th>지역</th>
-                        <th>단계</th>
-                        <th>구분</th>
-                        <th>지급방식</th>
-                        <th>금액</th>
-                      </tr>
-                      <tr className="filtered-table table-content">
-                        <td>{item.연도}</td>
-                        <td>{item.지역}</td>
-                        <td>{item.단계}</td>
-                        <td>{item.type}</td>
-                        <td>{item.지원유형}</td>
-                        <td>
-                          {item.금액 === 0
-                            ? "비예산"
-                            : (item.금액 * 1000000).toLocaleString()}
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                ))}
-            </div>
-            <div
-              className="next text page2-next"
-              onClick={() => setIsSecondPage(false)}
-            >
-              👉 뒤로가기
+            <div className="filtered-contents-container">
+              <div
+                className="move-backwards"
+                onClick={handleMoveBackwards}
+              ></div>
+              <div className="filtered-contents">
+                {/* {itemsArray
+                  .filter((item) => selectedButtons.includes(item.단계))
+                  .map((item, index) => (
+                    <div key={index}>
+                      <div className="filtered-title">{item.사업명}</div>
+                      <table className="filtered-table">
+                        <tr className="filtered-table table-title">
+                          <th>년도</th>
+                          <th>지역</th>
+                          <th>단계</th>
+                          <th>구분</th>
+                          <th>지급방식</th>
+                          <th>금액</th>
+                        </tr>
+                        <tr className="filtered-table table-content">
+                          <td>{item.연도}</td>
+                          <td>{item.지역}</td>
+                          <td>{item.단계}</td>
+                          <td>{item.type}</td>
+                          <td>{item.지원유형}</td>
+                          <td>
+                            {item.금액 === 0
+                              ? "비예산"
+                              : (item.금액 * 1000000).toLocaleString()}
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  ))} */}
+                {itemsArray
+                  .filter((item) => selectedButtons.includes(item.단계))
+                  .slice(startIndex, startIndex + 2)
+                  .map((item, index) => (
+                    <div key={index}>
+                      <div className="filtered-title">{item.사업명}</div>
+                      <table className="filtered-table">
+                        <table className="filtered-table">
+                          <tr className="filtered-table table-title">
+                            <th>년도</th>
+                            <th>지역</th>
+                            <th>단계</th>
+                            <th>구분</th>
+                            <th>지급방식</th>
+                            <th>금액</th>
+                          </tr>
+                          <tr className="filtered-table table-content">
+                            <td>{item.연도}</td>
+                            <td>{item.지역}</td>
+                            <td>{item.단계}</td>
+                            <td>{item.type}</td>
+                            <td>{item.지원유형}</td>
+                            <td>
+                              {item.금액 === 0
+                                ? "비예산"
+                                : (item.금액 * 1000000).toLocaleString()}
+                            </td>
+                          </tr>
+                        </table>
+                      </table>
+                    </div>
+                  ))}
+              </div>
+              <div className="move-forwards" onClick={handleMoveForwards}></div>
             </div>
           </div>
         ) : (
