@@ -112,21 +112,23 @@ function App() {
 
   return (
     <div className="App">
-      <SectionsContainer {...options}>
-        <Section>
-          <MainPage1 />
-        </Section>
-        <Section>
-          <MainPage2 />
-        </Section>
-        <Section>
-          <MainPage3 />
-        </Section>
-        <Section>
-          <MainPage4 />
-        </Section>
-        <Section>{radarChart}</Section>
-      </SectionsContainer>
+      <div className="user-select-none">
+        <SectionsContainer {...options}>
+          <Section>
+            <MainPage1 />
+          </Section>
+          <Section>
+            <MainPage2 />
+          </Section>
+          <Section>
+            <MainPage3 />
+          </Section>
+          <Section>
+            <MainPage4 />
+          </Section>
+          <Section>{radarChart}</Section>
+        </SectionsContainer>
+      </div>
     </div>
   );
 }
