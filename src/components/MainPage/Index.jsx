@@ -44,6 +44,7 @@ export const MainPage3 = () => {
             alt="출산율 변화 바 그래프"
             src={barchart}
           />
+          <p class="plus-text">* y축 정보는 생략되었습니다.</p>
         </div>
       </div>
     </>

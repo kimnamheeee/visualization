@@ -57,3 +57,15 @@
 .scroller-margin {
   margin-top: 10vh;
 }
+
+.image-container {
+  position: relative;
+}
+
+.plus-text {
+  font-size: 2.1vh;
+  position: absolute;
+  color: #878787;
+  top: 88%;
+  margin-left: 15.5vw;
+}
