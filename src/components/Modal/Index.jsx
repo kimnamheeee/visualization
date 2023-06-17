@@ -206,24 +206,27 @@ export const Modal = ({
     } else {
       setSelectedButtons([...selectedButtons, button]);
     }
-    console.log(itemsArray);
   };
+
+  useEffect(() => {
+    setStartIndex(0);
+  }, [selectedButtons]);
 
   const [startIndex, setStartIndex] = useState(0);
 
+  const filteredItems = itemsArray.filter((item) =>
+    selectedButtons.includes(item.단계)
+  );
+
   const handleMoveForwards = () => {
-    if (startIndex + 2 < itemsArray.length) {
+    if (startIndex + 2 < filteredItems.length) {
       setStartIndex((index) => index + 2);
-    } else {
-      console.log("end of page");
     }
   };
 
   const handleMoveBackwards = () => {
     if (startIndex - 2 >= 0) {
       setStartIndex((index) => index - 2);
-    } else {
-      console.log("cannot move anymore");
     }
   };
 
