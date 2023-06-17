@@ -17,8 +17,6 @@
   width: 100%;
 }
 
-/* .main-yearbar {
-  position: fixed;
-  top: 60vh;
-  left: 87vw;
-} */
+.user-select-none {
+  -webkit-user-select: none;
+}
