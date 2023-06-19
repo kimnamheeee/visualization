@@ -22,6 +22,9 @@ import Select from "react-select";
 import datas from "../../data/datas.json";
 import { useState, useEffect } from "react";
 
+import rightarrow from "../../assets/images/rightarrow.svg";
+import leftarrow from "../../assets/images/leftarrow.svg";
+
 export const Modal = ({
   region,
   year,
@@ -214,19 +217,27 @@ export const Modal = ({
 
   const [startIndex, setStartIndex] = useState(0);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 2;
+
   const filteredItems = itemsArray.filter((item) =>
     selectedButtons.includes(item.단계)
   );
 
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+
   const handleMoveForwards = () => {
+    console.log("pages total", totalPages);
     if (startIndex + 2 < filteredItems.length) {
       setStartIndex((index) => index + 2);
+      setCurrentPage((page) => page + 1);
     }
   };
 
   const handleMoveBackwards = () => {
     if (startIndex - 2 >= 0) {
       setStartIndex((index) => index - 2);
+      setCurrentPage((page) => page - 1);
     }
   };
 
@@ -326,40 +337,13 @@ export const Modal = ({
               </div>
             </div>
             <div className="filtered-contents-container">
-              <div
+              <img
+                src={leftarrow}
                 className="move-backwards"
                 onClick={handleMoveBackwards}
-              ></div>
+                alt="화살표"
+              />
               <div className="filtered-contents">
-                {/* {itemsArray
-                  .filter((item) => selectedButtons.includes(item.단계))
-                  .map((item, index) => (
-                    <div key={index}>
-                      <div className="filtered-title">{item.사업명}</div>
-                      <table className="filtered-table">
-                        <tr className="filtered-table table-title">
-                          <th>년도</th>
-                          <th>지역</th>
-                          <th>단계</th>
-                          <th>구분</th>
-                          <th>지급방식</th>
-                          <th>금액</th>
-                        </tr>
-                        <tr className="filtered-table table-content">
-                          <td>{item.연도}</td>
-                          <td>{item.지역}</td>
-                          <td>{item.단계}</td>
-                          <td>{item.type}</td>
-                          <td>{item.지원유형}</td>
-                          <td>
-                            {item.금액 === 0
-                              ? "비예산"
-                              : (item.금액 * 1000000).toLocaleString()}
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  ))} */}
                 {itemsArray
                   .filter((item) => selectedButtons.includes(item.단계))
                   .slice(startIndex, startIndex + 2)
@@ -393,7 +377,24 @@ export const Modal = ({
                     </div>
                   ))}
               </div>
-              <div className="move-forwards" onClick={handleMoveForwards}></div>
+              <img
+                className="move-forwards"
+                src={rightarrow}
+                alt="화살표"
+                onClick={handleMoveForwards}
+              />
+            </div>
+            <div className="pagination-info">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <div
+                  className="pages"
+                  key={index}
+                  style={{
+                    backgroundColor:
+                      index + 1 === currentPage ? "#54bfcf" : "#878787",
+                  }}
+                ></div>
+              ))}
             </div>
           </div>
         ) : (

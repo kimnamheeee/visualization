@@ -260,19 +260,28 @@
 }
 
 .move-forwards {
-  border-bottom: 2px solid #878787;
-  border-right: 2px solid #878787;
-  transform: rotate(-45deg);
-  width: 3vh;
   height: 3vh;
   cursor: pointer;
+  margin-left: 2vh;
 }
 
 .move-backwards {
-  border-top: 2px solid #878787;
-  border-left: 2px solid #878787;
-  transform: rotate(-45deg);
-  width: 3vh;
   height: 3vh;
   cursor: pointer;
+  margin-right: 2vh;
+}
+
+.pagination-info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: -3vh;
+  margin-top: -2vh;
+}
+
+.pages {
+  border-radius: 50%;
+  width: 1vh;
+  height: 1vh;
+  margin-left: 1vh;
 }
